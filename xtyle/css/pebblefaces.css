@@ -1,0 +1,11 @@
+body{
+  background-color: #868686;
+}
+
+#logo{
+  font-family: "Russo One", "Roboto", Arial;
+}
+
+a, h5{
+  color: #d4d5d5;
+}
