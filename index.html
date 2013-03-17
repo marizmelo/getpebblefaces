@@ -49,7 +49,7 @@
           <ul id="pebble-watch" class="reset">
             <li class="band-top border-radius"></li>
             <li class="watch-visor">
-              <h1 class="center" style="color: white; margin-top: 50px; font-size: 350%"></h1>
+              <h1 class="center display-none" style="color: white; margin-top: 50px; font-size: 350%"></h1>
             </li>
             <li class="watch-body border-radius jetblack" style="z-index: 100"></li>
             <li class="btn-watch btn-left border-radius-left border-radius"></li>
@@ -75,12 +75,12 @@
   <script>
     $(function(){
       // WATCH 
-      var myVar=setInterval(function(){myTimer()},1000);
+      var myVar=setInterval(function(){myTimer()},0);
       function myTimer()
       {
       var d=new Date();
       var t=d.toLocaleTimeString();
-      $(".watch-visor h1").html(t);
+      $(".watch-visor h1").html(t).fadeIn();
       }
       
 
