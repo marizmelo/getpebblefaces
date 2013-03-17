@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="icon" type="image/x-icon" href="xtyle/img/favicon.ico">
   <link rel="stylesheet" type="text/css" href="xtyle/css/xtyle.css">
-  <link rel="stylesheet" type="text/css" href="xtyle/css/pebbleface.css">
+  <link rel="stylesheet" type="text/css" href="xtyle/css/pebblefaces.css">
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="xtyle/js/xtyle.js"></script>
@@ -22,24 +22,77 @@
   <div class="layout-fixed-center">
     <div class="grid">
       <!-- LOGO + INFO -->
-      <div class="grid4">
+      <div class="grid3">
         <div class="">
-          <h1 id="logo"><a href="#">Pebble</a></h1>
+          <h1 id="logo">Pebble</h1>
           <h5 class="lighter" style="margin-top: -10px;">e-paper watch</h5>
-          <p>Pebble is the first watch built for the 21st century.</p>
-          <p>Hi, I'm Mariz Melo and this is my concept website for Pebble watch faces. This is an open-sourced project on <a href="http://github.com/marizmelo/pebblefaces">Github</a>.</p>
+
+          <p class="margin-top2x"><a href="">Pebble</a> is the first watch built for the 21st century.</p>
+          <p>Hi, I'm <a href="http://marizmelo.com">Mariz Melo</a> and this is my concept website for Pebble watch faces. This is an open-sourced project on <a href="http://github.com/marizmelo/getpebblefaces">Github</a>.</p>
+          
+          <ul id="colors" class="inline" style="margin-top: 30px;">
+            <li class="jetblack border-radius-circle" title="Jet Black"></li>
+            <li class="grey border-radius-circle opacity-50" title="Grey"></li>
+            <li class="articwhite border-radius-circle opacity-50" title="Artic White"></li>
+            <li class="cherryred border-radius-circle opacity-50" title="Cherry Red"></li>
+            <li class="orange border-radius-circle opacity-50" title="Orange"></li>
+          </ul>
+
+           <a href="http://getpebble.com" class="btn success border-radius margin-left-none" style="margin-top: 30px;"><strong>Get Pebble</strong></a>
+          
         </div>
       </div>
       <!-- CSS WATCH AND FACES -->
-      <div class="grid2"><div></div></div>
-      <!-- GET PEBBLE BUTTON -->
-      <div class="grid4 right">
-        <div class="">
-          <a href="http://getpebble.com" class="btn success border-radius"><strong>Get Pebble</strong></a>
+      <div class="grid2" style="margin-bottom: 50px;">
+        <div style="padding: 0px 20px">
+          
+          <ul id="pebble-watch" class="reset">
+            <li class="band-top border-radius"></li>
+            <li class="watch-visor">
+              <h1 class="center" style="color: white; margin-top: 50px; font-size: 350%"></h1>
+            </li>
+            <li class="watch-body border-radius jetblack" style="z-index: 100"></li>
+            <li class="btn-watch btn-left border-radius-left border-radius"></li>
+            <li class="btn-watch btn-right-top"></li>
+            <li class="btn-watch btn-right-center"></li>
+            <li class="btn-watch btn-right-bottom"></li>
+            <li class="band-bottom border-radius"></li>
+          </ul>
+
         </div>
       </div>
+
+      <!-- WATCHFACES -->      
+      <div class="class4">
+        <div></div>
+      </div>
+
     </div>
   </div>
   
+  <!-- SCRIPTS -->
+  <script src="xtyle/js/jquery.tipsy.js"></script>
+  <script>
+    $(function(){
+      // WATCH 
+      var myVar=setInterval(function(){myTimer()},1000);
+      function myTimer()
+      {
+      var d=new Date();
+      var t=d.toLocaleTimeString();
+      $(".watch-visor h1").html(t);
+      }
+      
+
+      // TIPSY
+      $("#colors li").tipsy({offset: 5, delayIn: 200, fade: true});
+
+      // COLOR MENU EFFECTS
+      $("#colors li").on("click", function(){
+        $(this).siblings().animate({"opacity": ".5"}, "fast");
+        $(this).animate({"opacity": "1"}, "fast");
+      });
+    });
+  </script>
 </body>
 </html>
